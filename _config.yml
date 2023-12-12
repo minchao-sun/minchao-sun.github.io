@@ -4,7 +4,7 @@ highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
+gems:             [jekyll-paginate]
 
 # Setup
 title:            Minchao's Home Page
