@@ -1,25 +1,5 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
-# Permalinks
-permalink:        pretty
-gems:             [jekyll-paginate]
-
 # Setup
 title:            Minchao's Home Page
-tagline:          'welcome'
-description:      'Test'
+theme:            jekyll-theme-modernist
+description:      Test
 url:              https://github.com/minchao-sun
-baseurl:          /
-
-author:
-  name:           'Minchao Sun'
-
-paginate:         5
-
-# Custom vars
-version:          2.1.0
-
-github:
-  repo:           https://github.com/minchao-sun
