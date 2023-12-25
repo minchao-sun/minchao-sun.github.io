@@ -1,5 +1,7 @@
 ---
 title:  "Adam Optimizer"
+categories:
+  - Machine Learning
 ---
 
 Adam优化器是随机梯度下降的扩展版本[1]
@@ -86,4 +88,4 @@ Adam 需要保持的值包括：
 
 ## Reference
 
-[1] Kingma, D.P., & BA, J. (2014). Adam: A Method for Stochastic Optimization. https://arxiv.org/abs/1412.6980
+[1] Kingma, D.P., & BA, J. (2014). [Adam: A Method for Stochastic Optimization.](https://arxiv.org/abs/1412.6980)
