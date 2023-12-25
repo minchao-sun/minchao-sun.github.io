@@ -1,6 +1,5 @@
 ---
-layout: post
-title: Adam Optimizer
+title:  "Adam Optimizer"
 ---
 
 Adam优化器是随机梯度下降的扩展版本[1]
