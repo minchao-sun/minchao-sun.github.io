@@ -1,4 +1,4 @@
-title: Minchao's Page
+title: Minchao's Homepage
 author:
   name: Minchao Sun
   # email: your-email@domain.com
@@ -42,7 +42,7 @@ minima:
   # solarized-light	   Light variant of solarized color scheme.
   # solarized-dark	   Dark variant of solarized color scheme.
   # solarized	         Adaptive skin for solarized color scheme skins.
-  skin: "solarized-light"
+  skin: classic
   
   # Minima date format.
   # The default value is "%b %d, %Y" (e.g. Nov 14, 2023) 
