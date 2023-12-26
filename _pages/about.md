@@ -33,7 +33,6 @@ Minimal Mistakes is a flexible two-column Jekyll theme. Perfect for hosting your
 
 ## Demo Pages
 
----
 
 ## Credits
 

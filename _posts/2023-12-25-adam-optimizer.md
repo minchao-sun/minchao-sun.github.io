@@ -66,8 +66,8 @@ $$
 \begin{align*}
     m_t &:= \beta_1+(1-\beta_1)g_t \\
     v_t &:= \beta_2 + (1-\beta_2)g_t^2 \\
-    \hat{m_t} &:= \frac{m_t}{1-\beta_1} \\
-    \hat{v_t} &:= \frac{v_t}{1-\beta_2} \\
+    \hat{m_t} &:= \frac{m_t}{1-\beta_1^t} \\
+    \hat{v_t} &:= \frac{v_t}{1-\beta_2^t} \\
     w_{t+1} &:= w_t - \alpha\frac{\hat{m_t}}{\sqrt{\hat{v_t}}+\varepsilon}
 \end{align*}
 $$
