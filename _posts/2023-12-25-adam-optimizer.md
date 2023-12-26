@@ -88,6 +88,56 @@ Adam 需要保存的值包括：
 - $\boldsymbol{v}_t$: 梯度方差的移动平均，或者叫 variance
 - $\boldsymbol{w}_t$: 在混合精度训练中，由于优化器需要使用FP32（单精度浮点数）的weights来更新，因此需要单独保存一份FP32的权重weights
 
+## AdamW
+
+AdamW在原有的Adam基础上加上了权重衰减（weight decay）[2]
+
+区别在于权重更新的时候：
+
+$$
+\boldsymbol{w}_t \leftarrow (1-\alpha\lambda)\boldsymbol{w}_{t-1} - \alpha\frac{\hat{\boldsymbol{m}_t}}{\sqrt{\hat{\boldsymbol{v}_t}}+\varepsilon}
+$$
+
+参考pytorch的实现：
+
+$$
+\begin{aligned}
+            &\rule{110mm}{0.4pt}                                                                 \\
+            &\textbf{input}      : \gamma \text{(lr)}, \: \beta_1, \beta_2
+                \text{(betas)}, \: \theta_0 \text{(params)}, \: f(\theta) \text{(objective)},
+                \: \epsilon \text{ (epsilon)}                                                    \\
+            &\hspace{13mm}      \lambda \text{(weight decay)},  \: \textit{amsgrad},
+                \: \textit{maximize}                                                             \\
+            &\textbf{initialize} : m_0 \leftarrow 0 \text{ (first moment)}, v_0 \leftarrow 0
+                \text{ ( second moment)}, \: \widehat{v_0}^{max}\leftarrow 0              \\[-1.ex]
+            &\rule{110mm}{0.4pt}                                                                 \\
+            &\textbf{for} \: t=1 \: \textbf{to} \: \ldots \: \textbf{do}                         \\
+
+            &\hspace{5mm}\textbf{if} \: \textit{maximize}:                                       \\
+            &\hspace{10mm}g_t           \leftarrow   -\nabla_{\theta} f_t (\theta_{t-1})          \\
+            &\hspace{5mm}\textbf{else}                                                           \\
+            &\hspace{10mm}g_t           \leftarrow   \nabla_{\theta} f_t (\theta_{t-1})           \\
+            &\hspace{5mm} \theta_t \leftarrow \theta_{t-1} - \gamma \lambda \theta_{t-1}         \\
+            &\hspace{5mm}m_t           \leftarrow   \beta_1 m_{t-1} + (1 - \beta_1) g_t          \\
+            &\hspace{5mm}v_t           \leftarrow   \beta_2 v_{t-1} + (1-\beta_2) g^2_t          \\
+            &\hspace{5mm}\widehat{m_t} \leftarrow   m_t/\big(1-\beta_1^t \big)                   \\
+            &\hspace{5mm}\widehat{v_t} \leftarrow   v_t/\big(1-\beta_2^t \big)                   \\
+            &\hspace{5mm}\textbf{if} \: amsgrad                                                  \\
+            &\hspace{10mm}\widehat{v_t}^{max} \leftarrow \mathrm{max}(\widehat{v_t}^{max},
+                \widehat{v_t})                                                                   \\
+            &\hspace{10mm}\theta_t \leftarrow \theta_t - \gamma \widehat{m_t}/
+                \big(\sqrt{\widehat{v_t}^{max}} + \epsilon \big)                                 \\
+            &\hspace{5mm}\textbf{else}                                                           \\
+            &\hspace{10mm}\theta_t \leftarrow \theta_t - \gamma \widehat{m_t}/
+                \big(\sqrt{\widehat{v_t}} + \epsilon \big)                                       \\
+            &\rule{110mm}{0.4pt}                                                          \\[-1.ex]
+            &\bf{return} \:  \theta_t                                                     \\[-1.ex]
+            &\rule{110mm}{0.4pt}                                                          \\[-1.ex]
+       \end{aligned}
+$$
+
 ## Reference
 
 [1] Kingma, D.P., & BA, J. (2014). [Adam: A Method for Stochastic Optimization.](https://arxiv.org/abs/1412.6980)
+
+[2] [Decoupled Weight Decay Regularization](https://arxiv.org/abs/1711.05101)
