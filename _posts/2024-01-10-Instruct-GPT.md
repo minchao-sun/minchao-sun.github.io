@@ -12,7 +12,7 @@ categories:
 
 主要使用的技术是Reinforcement learning from human feedback (RLHF)
 
-![InstructGPT diagram]({{ site.url }}{{ site.baseurl }}/assets/images/image-alignment-580x300.jpg){: .align-center}
+![InstructGPT-diagram](assets/images/image-alignment-580x300.jpg)
 
 ## Dataset
 
