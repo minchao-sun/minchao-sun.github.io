@@ -3,11 +3,16 @@ title:  "Instruct GPT"
 tag:
   - NLP
   - LLM
+  - RL
 categories:
   - Machine Learning
 ---
 
 这篇文章总结InstructGPT中的一些要点。
+
+主要使用的技术是Reinforcement learning from human feedback (RLHF)
+
+![InstructGPT diagram]({{ site.url }}{{ site.baseurl }}/assets/images/image-alignment-580x300.jpg){: .align-center}
 
 ## Dataset
 
