@@ -1,5 +1,5 @@
 ---
-title:  "Instruct GPT"
+title: "Instruct GPT"
 tag:
   - NLP
   - LLM
@@ -12,7 +12,7 @@ categories:
 
 主要使用的技术是Reinforcement learning from human feedback (RLHF)
 
-![InstructGPT-diagram](assets/images/image-alignment-580x300.jpg)
+![InstructGPT-diagram](../assets/images/InstructGPT-Diagram.png)
 
 ## Dataset
 
