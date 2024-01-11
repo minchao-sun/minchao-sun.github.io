@@ -54,7 +54,10 @@ $$
 \text{objective}(\phi)=E_{(x,y)\sim D_{\pi_\phi^\text{RL}}}\left[r_\theta(x,y)-\beta\log\left(\frac{\pi_\phi^\text{RL}(y|x)}{\pi^\text{SFT}(y|x)}\right)\right] + \gamma E_{x\sim D_\text{pretrain}}[\log(\pi_\phi^\text{RL}(x))]
 $$
 
-其中$\pi_\phi^\text{RL}$ 是要学习的模型（RL policy），$\pi^\text{SFT}$ 是SFT训练出来的模型。与统计学习不同的是，**强化学习的数据分布会随着模型的变化而变化**。
+其中$\pi_\phi^\text{RL}$ 是要学习的模型（RL policy），$\pi^\text{SFT}$ 是SFT训练出来的模型。注意与统计学习不同的是，**强化学习的数据分布会随着模型的变化而变化**。
 
 $r_\theta$ 实际上是在学习人类的排序，来给RL提供一个实时的反馈。
 
+$\beta$ 是KL系数，这一项是RL模型概率分布和SFT模型概率分布的KL散度（用于评估RL和SFT模型分布的分离程度），这是一个正则项（或者说惩罚项penalty），用于约束模型使得RL模型与SFT的分布偏差不要过大。
+
+$\gamma$ 这一项使得模型能够同时参考pretrain的原始数据。如果$\gamma=0$，则模型被称为PPO模型，如果$\gamma\ne0$，则模型被称为PPO-ptx模型
