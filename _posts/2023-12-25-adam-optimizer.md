@@ -1,5 +1,8 @@
 ---
 title:  "Adam Optimizer"
+classes: wide
+toc: true
+toc_sticky: true
 categories:
   - Machine Learning
 ---

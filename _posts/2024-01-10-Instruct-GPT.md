@@ -1,5 +1,8 @@
 ---
 title: "Instruct GPT"
+classes: wide
+toc: true
+toc_sticky: true
 tag:
   - NLP
   - LLM
