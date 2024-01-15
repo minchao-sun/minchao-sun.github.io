@@ -14,13 +14,15 @@ categories:
 
 Too long don't read
 
-![图片](https://segmentfault.com/img/remote/1460000043888826)
+| 参数                 | 精确公式                                           | 估计公式                        | 更粗略的估计                       |
+| -------------------- | -------------------------------------------------- | ------------------------------- | ---------------------------------- |
+| Multi-head attention | $4(d_{model}^2+d_{model})$                         | $4d_{model}^2$                  | /                                  |
+| Feed-forward         | $2d_{model}d_{ff}+d_{model}+d_{ff}$                | $2d_{model}d_{ff}$              | /                                  |
+| Layer norm           | $2 d_{model}$                                      | 0                               | /                                  |
+| Encoder              | $4d_{model}^2+2d_{model}d_{ff}+9d_{model}+d_{ff}$  | $4d_{model}^2+2d_{model}d_{ff}$ | $12d_{model}\approx10 d_{model}^2$ |
+| Decoder              | $8d_{model}^2+2d_{model}d_{ff}+15d_{model}+d_{ff}$ | $8d_{model}^2+2d_{model}d_{ff}$ | $16d_{model}\approx10 d_{model}^2$ |
 
-| 参数                 | 精确公式                                           | 估计公式                        |
-| -------------------- | -------------------------------------------------- | ------------------------------- |
-| Multi-head attention | $4(d_{model}^2+d_{model})$                         | $4d_{model}^2$                  |
-| Feed-forward         | $2d_{model}d_{ff}+d_{model}+d_{ff}$                | $2d_{model}d_{ff}$              |
-| Layer norm           | $2 d_{model}$                                      | 0                               |
-| Encoder              | $4d_{model}^2+2d_{model}d_{ff}+9d_{model}+d_{ff}$  | $4d_{model}^2+2d_{model}d_{ff}$ |
-| Decoder              | $8d_{model}^2+2d_{model}d_{ff}+15d_{model}+d_{ff}$ | $8d_{model}^2+2d_{model}d_{ff}$ |
+  
+
+
 
