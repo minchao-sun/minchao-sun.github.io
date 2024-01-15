@@ -1,8 +1,6 @@
 ---
 title:  "Regularization"
 classes: wide
-toc: true
-toc_sticky: true
 tags:
   - Math
 categories:

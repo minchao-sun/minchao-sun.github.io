@@ -1,7 +1,6 @@
 ---
 title: "如何估计Transformer模型的参数量级"
 classes: wide
-toc: true
 tag:
   - LLM
 categories:
