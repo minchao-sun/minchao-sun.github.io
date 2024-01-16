@@ -49,9 +49,9 @@ Decoder = Masked multi-head attention + Multi-head attention + Feed-forward + La
 
 ### Multi-head attention
 
-这一层输入和输出的维度都是$d_{model}$，参数量的大小也就是$d_{model}*d_{model}+d_{model}$，其中的一次项是bias，在估算中，我们忽略一次项，只统计二次项。
+这一层输入和输出的维度都是$d_{model}$，参数量的大小也就是$d_{model}d_{model}+d_{model}$，其中的一次项是bias，在估算中，我们忽略一次项，只统计二次项。
 
-同时注意力机制中的Q/K/V各自拥有一个$d_{model}*d_{model}$大小的权重（实际上内部根据head的数量做了切分，但是我们只考虑整体的参数数量），因此这里有$3d_{model}*d_{model}$的参数（忽略一次项的bias）。
+同时注意力机制中的Q/K/V各自拥有一个$d_{model}d_{model}$大小的权重（实际上内部根据head的数量做了切分，但是我们只考虑整体的参数数量），因此这里有$3d_{model}^2$的参数（忽略一次项的bias）。
 
 综上，一个注意力层拥有的参数数量约为 $4d_{model}^2$
 
@@ -59,7 +59,7 @@ Decoder = Masked multi-head attention + Multi-head attention + Feed-forward + La
 
 前向反馈层还包含一个中间的隐藏层，维度是$d_{ff}$，注意这仍然是一个可以自行调节的超参数。不过，在原始论文以及BERT等后续论文中，$d_{ff}$的值都被默认设定为$4d_{model}$。因此默认情况下，除非有特别说明$d_{ff}$的取值，我门一般默认$d_{ff}=4d_{model}$。
 
-前向反馈是由两个全连接构成的。参数量大小为：$d_{model}*d_{ff}+d_{ff}*d_{model}=2d_{model}d_{ff}$，同样的，我们忽略了bias。在默认情况下，$2d_{model}d_{ff}=8d_{model}^2$。
+前向反馈是由两个全连接构成的。参数量大小为：$d_{model}d_{ff}+d_{ff}d_{model}=2d_{model}d_{ff}$，同样的，我们忽略了bias。在默认情况下，$2d_{model}d_{ff}=8d_{model}^2$。
 
 ### Layer norm
 
