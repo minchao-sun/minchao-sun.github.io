@@ -1,6 +1,7 @@
 ---
 title:  "Regularization"
 classes: wide
+mathjax: true
 tags:
   - Math
 categories:

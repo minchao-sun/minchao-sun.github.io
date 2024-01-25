@@ -1,6 +1,7 @@
 ---
 title: "Instruct GPT"
 classes: wide
+mathjax: true
 tag:
   - NLP
   - LLM
