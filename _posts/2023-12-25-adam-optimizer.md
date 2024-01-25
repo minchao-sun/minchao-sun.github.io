@@ -2,6 +2,7 @@
 title:  "Adam Optimizer"
 toc: true
 toc_sticky: true
+mathjax: true
 categories:
   - Machine Learning
 ---
