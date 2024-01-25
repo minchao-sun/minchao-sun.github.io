@@ -13,7 +13,10 @@ categories:
 
 主要使用的技术是Reinforcement learning from human feedback (RLHF)
 
-![InstructGPT-diagram](../assets/images/InstructGPT-Diagram.png)
+![InstructGPT-diagram](/assets/images/InstructGPT-Diagram.png){: .align-center}
+<p align="center">
+<em>Instruct GPT diagram</em>
+</p>
 
 ## Dataset
 
