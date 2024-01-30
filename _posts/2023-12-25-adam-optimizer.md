@@ -104,7 +104,7 @@ $$
 参考pytorch的实现：
 ![adamw](/assets/images/adamw-implementation.png){: .align-center}
 <p align="center">
-PyTorch AdamW Implementation
+<em>PyTorch AdamW Implementation</em>
 </p>
 
 ## Reference
