@@ -1,6 +1,6 @@
 ---
 title: "Flash Attention"
-classes: # wide
+classes: wide
 mathjax: true
 categories:
   - Machine Learning
