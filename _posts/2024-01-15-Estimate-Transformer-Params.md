@@ -1,6 +1,6 @@
 ---
 title: "如何估计Transformer模型的参数量级"
-classes: wide
+classes: #wide
 mathjax: true
 tag:
   - LLM
@@ -46,9 +46,7 @@ Encoder = Multi-head attention + Feed-forward + Layer norm
 
 Decoder = Masked multi-head attention + Multi-head attention + Feed-forward + Layer norm
 
-![transformer-arch](/assets/images/transformer-arch.png){: .align-center}{ width=50% }
-
-<img src="assets/images/transformer-arch.png" width="200px">
+![transformer-arch](/assets/images/transformer-arch.png){: .align-center}
 
 我们只是近似地估计参数量，因此可以认为 Decoder = Multi-head attention + Encoder
 
