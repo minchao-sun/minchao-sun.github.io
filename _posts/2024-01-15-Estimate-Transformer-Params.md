@@ -46,11 +46,17 @@ Encoder = Multi-head attention + Feed-forward + Layer norm
 
 Decoder = Masked multi-head attention + Multi-head attention + Feed-forward + Layer norm
 
+![transformer-arch](/assets/images/transformer-arch.png){: .align-center}
+
 我们只是近似地估计参数量，因此可以认为 Decoder = Multi-head attention + Encoder
 
 ### Multi-head attention
 
-这一层输入和输出的维度都是$d_{model}$，参数量的大小也就是$d_{model}d_{model}+d_{model}$，其中的一次项是bias，在估算中，我们忽略一次项，只统计二次项。
+下图是Multi-head attention的示意图，Q、K、V分别经过3次线性投影，然后经过Scaled dot-product attention（这一步骤内部没有可学习参数），最后再通过一次线性层得到输出。由此可知，可学习的参数均在线性投影中。
+
+![multi-head-atten](/assets/images/multi-head-atten.png){: .align-center}
+
+最后的linear层输入和输出的维度都是$d_{model}$，参数量的大小也就是$d_{model}d_{model}+d_{model}$，其中的一次项是bias，在估算中，我们忽略一次项，只统计二次项。
 
 同时注意力机制中的Q/K/V各自拥有一个$d_{model}d_{model}$大小的权重（实际上内部根据head的数量做了切分，但是我们只考虑整体的参数数量），因此这里有$3d_{model}^2$的参数（忽略一次项的bias）。
 
