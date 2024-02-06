@@ -14,4 +14,18 @@ categories:
 * Knowledge Distillation
 * Parameter Quantization
 
- 
+## Network Pruning
+
+Networks are typically over-parameterized. 
+
+网络中有很多的冗余的weights或neurons，因此可以对network进行剪枝。
+
+## Knowledge Distillation
+
+Knowledge Distillation或者知识蒸馏是先训练一个大网络作为teacher model，然后基于这个teacher model去训练student model。
+
+Student model可能是把teacher model中去掉一部分layer得到的，因此也有文章把这种方法叫做layer reduction。
+
+## Parameter Quantization
+
+参数量化指的是可以将参数由浮点数(FP32/FP16等等)转换为整形(INT8等)，这是因为推理等场景下不需要非常高的精度也可以达成不错的效果，同时可以加速计算的速度。
