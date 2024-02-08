@@ -17,6 +17,7 @@ categories:
 ### attention matrix的计算及其含义
 
 我们先来看计算公式
+
 $$
 \text{Attention}(Q,K,V)=\text{softmax}(QK^T)V
 $$
