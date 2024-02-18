@@ -33,6 +33,7 @@ Self attention中的self代表什么呢？这意味着这是一个自注意力�
 ### Scaled dot-product attention
 
 Transformer中使用的Attention做了一点修改，对QK进行了缩放，所以叫Scaled dot-product attention。
+
 $$
 \text{Attention}(Q,K,V)=\text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 $$
