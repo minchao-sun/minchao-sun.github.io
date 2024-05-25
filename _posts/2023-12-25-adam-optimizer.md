@@ -107,6 +107,17 @@ $$
 <em>PyTorch AdamW Implementation</em>
 </p>
 
+## Weight Decay
+
+> Weight decay is somewhat like l2-norm, but is not exact l2-norm. 
+> It will pull the weights to zero 
+
+假设损失函数加上一个L2范数：$f(\boldsymbol{w})=L(\boldsymbol{w}, b)+\frac{\lambda}{2}||\boldsymbol{w}||^2$
+
+if $L$ is linear with $\boldsymbol{w}$, L2 norm (L2 Regularization) is equivalent with weight decay.
+
+For Adam they are not identical.
+
 ## Reference
 
 [1] Kingma, D.P., & BA, J. (2014). [Adam: A Method for Stochastic Optimization.](https://arxiv.org/abs/1412.6980)
