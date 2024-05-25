@@ -112,7 +112,9 @@ $$
 > Weight decay is somewhat like l2-norm, but is not exact l2-norm. 
 > It will pull the weights to zero 
 
-假设损失函数加上一个L2范数：$f(\boldsymbol{w})=L(\boldsymbol{w}, b)+\frac{\lambda}{2}||\boldsymbol{w}||^2$
+假设损失函数加上一个L2范数：
+
+$$f(\boldsymbol{w})=L(\boldsymbol{w}, b)+\frac{\lambda}{2}||\boldsymbol{w}||^2$$
 
 if $L$ is linear with $\boldsymbol{w}$, L2 norm (L2 Regularization) is equivalent with weight decay.
 
