@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "书架"
+    url: /vocal/
   - title: "Quick-Start Guide"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
